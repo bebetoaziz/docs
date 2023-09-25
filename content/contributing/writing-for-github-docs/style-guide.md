@@ -74,7 +74,7 @@ Only include a CTA button if navigating to the link supports user needs. Do not 
 
 Style your CTAs using the following format.
 
-```
+```html
 {% raw %}<a href="https://github.com/DESTINATION/URL" target="_blank" class="btn btn-primary mt-3 mr-3 no-underline"><span>Try PRODUCT NAME</span> {% octicon "link-external" height:16 %}</a>{% endraw %}
 ```
 
@@ -115,7 +115,7 @@ Use inline code blocks to refer to short command names.
 Use command blocks for longer or more complex commands.
 - **Use:** Enable maintenance mode according to your scheduled window by connecting to the administrative shell of any cluster node and running:
 
-  ```
+  ```shell
   ghe-cluster-maintenance -s
   ```
 
@@ -126,7 +126,7 @@ Avoid inline links in command names.
 When code examples refer to a larger file, show the relevant section of the file, so that users understand how to edit their own code in context.
 - **Use:**
 
-```
+```yaml
 on:
   schedule:
     - cron:  "40 19 * * *"
@@ -134,7 +134,7 @@ on:
 
 - **Avoid:**
 
-```
+```yaml
 schedule:
   - cron:  "40 19 * * *"
 ```
@@ -375,7 +375,7 @@ At the end of the article containing MIT-licensed content
 
 This text is only an example. Always use the license text from the project you are attributing.
 
-`````
+`````markdown
 ## Legal notice
 
 Portions have been adapted from [PROJECT](/LINK/TO/PROJECT) under the MIT license:
@@ -434,7 +434,7 @@ Sometimes, you need to link from one version of GitHub Docs to another. When you
 
 For example, the Free, Pro, & Team version of "[AUTOTITLE](/organizations/managing-organization-settings/managing-the-publication-of-github-pages-sites-for-your-organization)" might link to the {% data variables.product.prodname_ghe_cloud %} version of the same article like this:
 
-```
+```text
 You can choose to allow or disallow the publication of GitHub Pages sites.
 
 Organizations that use G{% data variables.product.prodname_ghe_cloud %} can choose to allow publicly published sites, privately published sites, both, or neither. For more information, see [the GitHub Enterprise Cloud documentation](/enterprise-cloud@latest/{{ currentArticle }}).
@@ -442,13 +442,13 @@ Organizations that use G{% data variables.product.prodname_ghe_cloud %} can choo
 
 To link to a different article in a different version, use this format:
 
-```
+```markdown
 For more information, see "[ARTICLE TITLE](/)" in the VERSION documentation.
 ```
 
 To link to the same article in a different version, use this format:
 
-```
+```markdown
 For more information, see [the VERSION documentation](/VERSION/{{ currentArticle }}).
 ```
 
@@ -460,18 +460,19 @@ When we link to specific sections of articles, we want to make sure the link is 
 
 To link to a specific header in the same article, use this format:
 
-```
+```markdown
 For more information, see "[HEADER TITLE](#HEADER-TITLE)."
 ```
 
 To link to a specific header in a different article, use this format:
 
-```
+```markdown
 For more information, see "[AUTOTITLE](PATH-TO-ARTICLE#HEADER-TITLE)."
 ```
 
 To link to two or more specific headers in a different article, use this format:
-```
+
+```markdown
 For more information, see "[HEADER-TITLE-1](PATH-TO-ARTICLE#SECTION-LINK-1)" and "[HEADER-TITLE-2](PATH-TO-ARTICLE#SECTION-LINK-2)" in "ARTICLE-TITLE."
 ```
 
@@ -479,7 +480,7 @@ For more information, see "[HEADER-TITLE-1](PATH-TO-ARTICLE#SECTION-LINK-1)" and
 
 When we link to content with a specific tool selected, we want to make sure that someone knows that they will be looking at content relevant to a specific tool even if they do not view the tool switcher tabs in the article.
 
-```
+```markdown
 For more information, see the TOOLNAME documentation in "[ARTICLE TITLE](/PATH/TO/ARTICLE?tool=TOOLNAME)."
 ```
 
@@ -487,7 +488,7 @@ For more information, see the TOOLNAME documentation in "[ARTICLE TITLE](/PATH/T
 
 Use this format to link to a learning path.
 
-```
+```markdown
 For more information, follow the "[LEARNING PATH TITLE](/)" learning path.
 ```
 
@@ -587,7 +588,7 @@ steps:
 
 For {% data variables.product.prodname_docs %} purposes, a first-party action is any action that has the `actions/`, `github/` or `octo-org/` prefix. For example, this is a first-party action:
 
-```
+```yaml
 steps:
   - uses: actions/checkout@main
 ```
@@ -596,7 +597,7 @@ steps:
 
 Code examples that use third-party actions must include the following disclaimer as part of the code block:
 
-```
+```yaml
 # This workflow uses actions that are not certified by {% data variables.product.company_short %}.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
@@ -605,20 +606,20 @@ Code examples that use third-party actions must include the following disclaimer
 
 To insert this disclaimer, use the `{% raw %}{% data reusables.actions.actions-not-certified-by-github-comment %}{% endnote %}` reusable. If the code block is indented, you must use `indented_data_reference` along with the reusable. For example:
 
-```
+```text
 {% raw %}{% indented_data_reference reusables.actions.actions-not-certified-by-github-comment spaces=4 %}{% endraw %}
 ```
 
 For {% data variables.product.prodname_docs %} purposes, a third-party action is any action that doesn't have the `actions/`, `github/` or `octo-org/` prefix. For example, this is a first-party action:
 
-```
+```yaml
 steps:
   - uses: actions/checkout@main
 ```
 
 This is an example of a third-party action:
 
-```
+```yaml
 steps:
     - uses: google-github-actions/setup-gcloud@1bee7de035d65ec5da40a31f8589e240eba8fde5
 ```
@@ -630,14 +631,14 @@ Examples:
 
 Code examples that use third-party actions must always pin to a full length commit SHA, instead of the version number or branch:
 
-```
+```yaml
 steps:
     - uses: google-github-actions/setup-gcloud@1bee7de035d65ec5da40a31f8589e240eba8fde5
 ```
 
 For {% data variables.product.prodname_docs %} purposes, a third-party action is any action that doesn't have one of the following prefixes: `actions/`, `github/`, and `octo-org/`. For example, this is a first-party action:
 
-```
+```yaml
 steps:
   - uses: actions/javascript-action@main
 ```
@@ -908,7 +909,7 @@ Sectional TOCs must be introduced with a sentence or paragraph that helps people
 
 ### Example of sectional TOCs
 
-```
+```markdown
 ## Setting up the application
 
 Set up your application according to your operating system.
@@ -1006,6 +1007,7 @@ For example in the following table, in order to make sense of the "Yes" and "No"
 To add row headers for a Markdown table, wrap the table in the Liquid tags `{% raw %}{% rowheaders %} {% endrowheaders %}{% endraw %}`. For more information about using row headers, see "[AUTOTITLE](/contributing/syntax-and-versioning-for-github-docs/using-markdown-and-liquid-in-github-docs#table-row-headers)."
 
 ### Include a value for every cell
+
 Every cell in a table must contain a value. If the table has row headers, the first cell (cell A1) can be empty.
 
 If there is no data, use "None" or "Not applicable". Do not use "NA" or "N/A".
@@ -1022,6 +1024,7 @@ For tables that use symbols:
 Where table data is not truly binary (every value is either "Yes" or "No", for example), text values may be needed in addition to, or instead of, symbols. For example on the page "[AUTOTITLE](/support/learning-about-github-support/about-github-support)", some features are marked as "Available to purchase".
 
 ### Use footnotes sparingly
+
 See "[Footnotes](#footnotes)."
 
 ### Align table content consistently
@@ -1106,6 +1109,7 @@ Use quotation marks around article titles, whether the article is hosted on GitH
 For further guidance, see “[Formatting titles](https://docs.microsoft.com/style-guide/text-formatting/formatting-titles)” in Microsoft’s Style Guide.
 
 ## Short titles
+
 We use short titles to populate the sidebar navigation. Since short titles appear in the sidebar navigation, they can use context to convey meaning and be slightly less precise than full titles. The goal of short titles is to help people find the content that they are looking for without having sidebar navigation items that are too long. Short titles give people contextual understanding of an article and align to the following standards.
 
 - Short titles are 2-3 words long.
@@ -1195,6 +1199,7 @@ When referencing text in the user interface, reproduce the text exactly. Use quo
 - **Use:** Under “IP allow list”, click **Edit**.
 
 ### More resources
+
 Microsoft Style Guide:
 - [Formatting text in instructions](https://docs.microsoft.com/style-guide/procedures-instructions/formatting-text-in-instructions)
 
